@@ -1,0 +1,71 @@
+[project]
+name = "image-tools"
+version = "0.2.0"
+description = "General-purpose image conversion and EXIF metadata management tool"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+authors = [
+    { name = "Andreas Sag", email = "30706568+andreassag@users.noreply.github.com" },
+]
+keywords = [
+    "image",
+    "conversion",
+    "exif",
+    "metadata",
+    "resizing",
+    "compression",
+    "watermark",
+    "pdf",
+    "tiff",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Multimedia :: Graphics",
+    "Topic :: Multimedia :: Graphics :: Graphics Conversion",
+]
+dependencies = [
+    "pillow>=12.3.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+]
+pdf = [
+    "pypdf>=4.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/andreassag/image-tools"
+Repository = "https://github.com/andreassag/image-tools"
+Issues = "https://github.com/andreassag/image-tools/issues"
+
+[project.scripts]
+image-convert = "image_tools.cli:main"
+inspect-exif = "image_tools.cli:inspect_main"
+image-resize = "image_tools.cli:resize_main"
+image-compress = "image_tools.cli:compress_main"
+image-orient = "image_tools.cli:orient_main"
+edit-exif = "image_tools.cli:edit_exif_main"
+image-rename = "image_tools.cli:rename_main"
+image-watermark = "image_tools.cli:watermark_main"
+image-pdf = "image_tools.cli:pdf_main"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --strict-markers"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
