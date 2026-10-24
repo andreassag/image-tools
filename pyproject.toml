@@ -31,7 +31,7 @@ classifiers = [
     "Topic :: Multimedia :: Graphics :: Graphics Conversion",
 ]
 dependencies = [
-    "pillow>=12.3.0",
+    "pillow>=13.0.0",
 ]
 
 [project.optional-dependencies]
